@@ -28,9 +28,9 @@ max_num_src_words = 8
 max_num_tgt_words = 8
 
 src_seq = torch.cat([torch.unsqueeze(F.pad(torch.randint(1, max_num_src_words, (L,)), (0, max_src_seq_len - L)), 0) \
-    for L in src_len])
+	for L in src_len])
 tgt_seq = torch.cat([torch.unsqueeze(F.pad(torch.randint(1, max_num_tgt_words, (L,)), (0, max_tgt_seq_len - L)), 0) \
-    for L in tgt_len])
+	for L in tgt_len])
 
 # 假设 batch 为 2, 
 # src: 第一个句子长度为 2, 第二个句子长度为 5
@@ -239,8 +239,8 @@ print(f"prob: \n {prob}")
 """
 prob:
 tensor([[[1.0000, 0.0000, 0.0000, 0.0000, 0.0000],
-         [0.3159, 0.6841, 0.0000, 0.0000, 0.0000],
-         [0.4471, 0.2711, 0.2817, 0.0000, 0.0000],
+		 [0.3159, 0.6841, 0.0000, 0.0000, 0.0000],
+		 [0.4471, 0.2711, 0.2817, 0.0000, 0.0000],
          [0.2000, 0.2000, 0.2000, 0.2000, 0.2000],
          [0.2000, 0.2000, 0.2000, 0.2000, 0.2000]],
 
@@ -265,10 +265,5 @@ def scaled_dot_product_attention(Q, K, V, attn_mask):
 	context = torch.bmm(prob, V)
 	
 	return context
-
-
-
-
-
 
 
